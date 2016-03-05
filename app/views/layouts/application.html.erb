@@ -10,6 +10,18 @@
 <body>
 
 <div class="container">
+<div class="row">
+   <%= link_to fa_icon("home", text:"home"), root_path, class:"btn btn-info"%>
+ <%= link_to fa_icon("file", text:"quiz"), quiz_path, class:"btn btn-info" %>
+ <%= link_to fa_icon("check-circle", text:"result"), result_path, class:"btn btn-info" %>
+ <%= link_to fa_icon("comment", text:"thanks"), thanks_path, class:"btn btn-info" %>
+  <%= link_to fa_icon("book", text:"admin"), logicians_path, class:"btn btn-warning" %>
+</div>
+</div>
+
+<div class="container">
+
+
   <%= yield %>
 </div>
 
