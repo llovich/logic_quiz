@@ -1,3 +1,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+$header_font: 'Raleway', sans-serif;
+$text_font: 'Arvo', serif;
+
+
+
+body {
+  margin-top:60px;
+  padding-top:20px;
+  font-family: $text_font;
+}
+
+h1 {
+    font-family: $header_font;
+    font-size:3.5em;
+  }
+
+h2 {
+    font-family: $header_font;
+    font-size:3em;
+  }
+
+h3 {
+    font-family: $header_font;
+    font-size:2.5em;
+  }
+
+h4, h5 {
+    font-family: $header_font;
+    font-size:2em;
+  }
+
+p {
+    font-family: $text_font;
+  }
+
+.form-inputs {
+    font-family: $text_font;
+}
