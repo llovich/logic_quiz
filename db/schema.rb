@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305022053) do
+ActiveRecord::Schema.define(version: 20160305231150) do
 
   create_table "logicians", force: :cascade do |t|
     t.string   "first_name"
@@ -21,8 +21,16 @@ ActiveRecord::Schema.define(version: 20160305022053) do
     t.string   "hint3"
     t.integer  "difficulty_level"
     t.text     "bio"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "drawing_file_name"
+    t.string   "drawing_content_type"
+    t.integer  "drawing_file_size"
+    t.datetime "drawing_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

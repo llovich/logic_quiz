@@ -10,8 +10,20 @@
     <%= f.input :hint1 %>
     <%= f.input :hint2 %>
     <%= f.input :hint3 %>
+    <%= f.input :drawing, as: :file, label: "Upload a New Drawing" %>
+    <% if @logician.drawing.exists? %>
+      <%= label_tag "Current Drawing" %>
+      <p><%= image_tag @logician.drawing.url(:thumb) %></p>
+      <br>
+    <% end %>
     <%= f.input :difficulty_level, collection: 1..3 %>
-    <%= f.input :bio, as: :text %>
+    <%= f.input :bio, as: :text, label: "Bio Text" %>
+     <%= f.input :photo, as: :file, label: "Upload a New Bio Photo" %>
+    <% if @logician.photo.exists? %>
+      <%= label_tag "Current Bio Photo" %>
+      <p><%= image_tag @logician.photo.url(:thumb) %></p>
+      <br>
+    <% end %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class:"btn btn-warning" %>

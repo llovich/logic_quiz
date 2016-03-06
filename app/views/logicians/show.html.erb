@@ -34,13 +34,23 @@
     </p>
 
     <p>
+      <strong>Drawing:</strong><br>
+      <%= image_tag @logician.drawing.url(:medium) %>
+    </p>
+
+    <p>
       <strong>Difficulty level:</strong>
       <%= @logician.difficulty_level %>
     </p>
 
     <p>
-      <strong>Bio:</strong>
+      <strong>Bio Text:</strong>
       <%= @logician.bio %>
+    </p>
+
+     <p>
+      <strong>Bio Photo:</strong><br>
+      <%= image_tag @logician.photo.url(:medium) %>
     </p>
   </div>
   <div class="col-sm-2"></div>

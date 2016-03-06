@@ -6,13 +6,12 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Hint 1</th>
-      <th>Hint 2</th>
-      <th>Hint 3</th>
+      <th>Drawing</th>
+      <th>Name</th>
+      <th>Hints 1, 2, 3</th>
       <th>Level</th>
-      <th>Bio</th>
+      <th>Bio Text</th>
+      <th>Bio Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,13 +19,12 @@
   <tbody>
     <% @logicians.each do |logician| %>
       <tr>
-        <td><%= logician.first_name %></td>
-        <td><%= logician.last_name %></td>
-        <td><%= logician.hint1 %></td>
-        <td><%= logician.hint2 %></td>
-        <td><%= logician.hint3 %></td>
+        <td><%= image_tag logician.drawing.url(:thumb) %></td>
+        <td><%= logician.first_name %> <%= logician.last_name %></td>
+        <td>see <%= link_to fa_icon('eye', text: "view"), logician %></td>
         <td><%= logician.difficulty_level %></td>
-        <td><%= logician.bio %></td>
+        <td>see <%= link_to fa_icon('eye', text: "view"), logician %></td>
+        <td><%= image_tag logician.photo.url(:thumb) %></td>
         <td><%= link_to fa_icon('eye', text: "view"), logician %></td>
         <td><%= link_to fa_icon('pencil', text:"edit"), edit_logician_path(logician) %></td>
         <td><%= link_to fa_icon('trash', text: "delete"), logician, method: :delete, data: { confirm: 'Are you sure?' } %></td>
