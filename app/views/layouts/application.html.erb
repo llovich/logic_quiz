@@ -10,19 +10,24 @@
 <body>
 
 <div class="container">
-<div class="row">
+ <div class="row">
+  <div class="col-sm-0"></div>
+  <div class="col-sm-12 text-right">
    <%= link_to fa_icon("home", text:"home"), root_path, class:"btn btn-info"%>
- <%= link_to fa_icon("file", text:"quiz"), quiz_path, class:"btn btn-info" %>
- <%= link_to fa_icon("check-circle", text:"result"), result_path, class:"btn btn-info" %>
- <%= link_to fa_icon("comment", text:"thanks"), thanks_path, class:"btn btn-info" %>
-  <%= link_to fa_icon("book", text:"admin"), logicians_path, class:"btn btn-warning" %>
+   <%= link_to fa_icon("file", text:"quiz"), quiz_path, class:"btn btn-info" %>
+   <%= link_to fa_icon("check-circle", text:"result"), result_path, class:"btn btn-info" %>
+   <%= link_to fa_icon("comment", text:"thanks"), thanks_path, class:"btn btn-info" %>
+    <%= link_to fa_icon("book", text:"admin"), logicians_path, class:"btn btn-warning" %>
+  </div>
+  <div class="col-sm-0"></div>
+ </div>
 </div>
-</div>
+
 
 <div class="container">
-
-
-  <%= yield %>
+  <div class="main_section">
+    <%= yield %>
+  </div>
 </div>
 
 </body>

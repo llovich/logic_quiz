@@ -1,7 +1,13 @@
-<h1>Edit Logician</h1>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+  <h1>Edit Logician</h1>
 
-<%= link_to fa_icon('eye', text: "view"), @logician %> |
-<%= link_to fa_icon('arrow-left ', text: "back"), logicians_path %>
+  <%= link_to fa_icon('eye', text: "view"), @logician %> |
+  <%= link_to fa_icon('arrow-left ', text: "back"), logicians_path %>
 
-<%= render 'form' %>
+  <%= render 'form' %>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
 

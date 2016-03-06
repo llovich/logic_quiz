@@ -1,2 +1,42 @@
-<h1>Pages#quiz</h1>
-<p>Find me in app/views/pages/quiz.html.erb</p>
+<div class="row">
+ <div class="col-sm-1"></div>
+ <div class="col-sm-10">
+  <h1>Who Am I?</h1>
+  <div class="panel panel-default">
+      <div class="panel-body">
+        <%= image_tag @logicians.last.drawing.url(:large), class:"img-responsive img-rounded center-block" %>
+      </div>
+    </div>
+
+    <p><strong>Need a hint?</strong> <%= @logicians.last.hint1 %></p>
+    <p><strong>And another?</strong> <%= @logicians.last.hint2 %></p>
+    <p><strong>Hint 3:</strong> <%= @logicians.last.hint3 %></p>
+ </div>
+ <div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+ <div class="col-sm-1"></div>
+ <div class="col-sm-7">
+ <%= form_tag("/quiz", method: "get") do %>
+   <input id="guess" name="guess" type="text" />
+   <% #TODO  when submit is hit, need to go to jscript and use below logic to display if correct or not and giv eoption for next question (cancel) or stop (quit) %>
+   <%= submit_tag("submit guess",  :class => "btn btn-success") %>
+ <% end %>
+
+
+  <% if params[:guess].titleize.eql?  @logicians.last.last_name %>
+    <%= "You are correct. It is #{@logicians.last.first_name} #{@logicians.last.last_name}!" %>
+  <% else %>
+    <%= "Good guess, but, it's #{@logicians.last.first_name} #{@logicians.last.last_name} " %>
+  <% end %>
+  </div>
+   <div class="col-sm-3 text-right">
+      <%= link_to fa_icon("home", text:"quit"), thanks_path, class:"btn btn-danger"%>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+
+
+
+

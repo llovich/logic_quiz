@@ -1,59 +1,64 @@
 <div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
   <h1>Logician's Information</h1>
   <%= link_to fa_icon('pencil', text: "edit"), edit_logician_path(@logician) %> |
   <%= link_to fa_icon('arrow-left ', text: "back"), logicians_path %>
-</div>
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-8 well">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 well">
 
-    <p id="notice"><%= notice %></p>
-    <p>
-      <strong>First name:</strong>
-      <%= @logician.first_name %>
-    </p>
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>First name:</strong>
+        <%= @logician.first_name %>
+      </p>
 
-    <p>
-      <strong>Last name:</strong>
-      <%= @logician.last_name %>
-    </p>
+      <p>
+        <strong>Last name:</strong>
+        <%= @logician.last_name %>
+      </p>
 
-    <p>
-      <strong>Hint1:</strong>
-      <%= @logician.hint1 %>
-    </p>
+      <p>
+        <strong>Hint1:</strong>
+        <%= @logician.hint1 %>
+      </p>
 
-    <p>
-      <strong>Hint2:</strong>
-      <%= @logician.hint2 %>
-    </p>
+      <p>
+        <strong>Hint2:</strong>
+        <%= @logician.hint2 %>
+      </p>
 
-    <p>
-      <strong>Hint3:</strong>
-      <%= @logician.hint3 %>
-    </p>
+      <p>
+        <strong>Hint3:</strong>
+        <%= @logician.hint3 %>
+      </p>
 
-    <p>
-      <strong>Drawing:</strong><br>
-      <%= image_tag @logician.drawing.url(:medium) %>
-    </p>
+      <p>
+        <strong>Drawing:</strong><br>
+        <%= image_tag @logician.drawing.url(:medium) %>
+      </p>
 
-    <p>
-      <strong>Difficulty level:</strong>
-      <%= @logician.difficulty_level %>
-    </p>
+      <p>
+        <strong>Difficulty level:</strong>
+        <%= @logician.difficulty_level %>
+      </p>
 
-    <p>
-      <strong>Bio Text:</strong>
-      <%= @logician.bio %>
-    </p>
+      <p>
+        <strong>Bio Text:</strong>
+        <%= @logician.bio %>
+      </p>
 
-     <p>
-      <strong>Bio Photo:</strong><br>
-      <%= image_tag @logician.photo.url(:medium) %>
-    </p>
+       <p>
+        <strong>Bio Photo:</strong><br>
+        <%= image_tag @logician.photo.url(:medium) %>
+      </p>
+    </div>
+    <div class="col-sm-2"></div>
   </div>
-  <div class="col-sm-2"></div>
+
+ </div>
+  <div class="col-sm-1"></div>
 </div>
 
 

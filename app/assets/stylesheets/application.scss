@@ -4,13 +4,27 @@
 
 $header_font: 'Raleway', sans-serif;
 $text_font: 'Arvo', serif;
+$bkgd_color: WhiteSmoke;
+$app_bkgdcolor: #FFFFFF;
 
 
 
 body {
-  margin-top:60px;
-  padding-top:20px;
+  margin-top:10px;
+  padding-top:10px;
   font-family: $text_font;
+  background-color:$bkgd_color;
+}
+
+.main_section {
+  background-color: $app_bkgdcolor;
+  padding-top:10px;
+  padding-bottom:30px;
+  #margin-left:50px;
+  #margin-right:50px;
+  margin-bottom:100px;
+  margin-top:20px;
+  border-radius: 20px;
 }
 
 h1 {
