@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def quiz
     @logicians = Logician.all
+    params[:guess] ="NoOne"
   end
 
   def result
