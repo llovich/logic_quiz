@@ -1,40 +1,41 @@
 <div class="row">
- <div class="col-sm-2"></div>
- <div class="col-sm-8">
- <% index_for_id = session[:quiz_list].pop %>
-  <h1>Who Am I?</h1>
-  <div class="panel panel-default">
-      <div class="panel-body">
-        <%= image_tag @logicians.find(index_for_id).drawing.url(:large), class:"img-responsive img-rounded center-block" %>
-      </div>
-    </div>
-    <h4>Here's a Hint:</h4>
-    <p><%= @logicians.find(index_for_id).hint1 %></p>
- </div>
- <div class="col-sm-2"></div>
+   <div class="col-sm-2"></div>
+   <div class="col-sm-8">
+     <% index_for_id = session[:quiz_list].pop %>
+      <h1>Who Am I?</h1>
+       <div class="panel panel-default">
+          <div class="panel-body">
+            <%= image_tag @logicians.find(index_for_id).drawing.url(:large), class:"img-responsive img-rounded center-block" %>
+          </div>
+        </div>
+       <h4>Here's a Hint:</h4>
+       <p><%= @logicians.find(index_for_id).hint1 %></p>
+   </div>
+   <div class="col-sm-2"></div>
 </div>
 
 <div class="row">
- <div class="col-sm-2"></div>
- <div class="col-sm-8">
-  <h4>Ok! Now Guess...</h4>
-  <div class="pull-right">
-      <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-warning"%>
-  </div>
- <%= form_tag(result_path, method: "get", ) do %>
-   <%= label_tag(:f_guess, "First name") %>
-   <%= text_field_tag :f_guess  %>
-   <%= label_tag(:guess, "Last name") %>
-   <%= text_field_tag :guess %>
-   <%= hidden_field_tag(:right_answer, index_for_id) %>
-   <% #TODO  when submit is hit, need to go to jscript and use below logic to display if correct or not and giv eoption for next question (cancel) or stop (quit) %>
-   <%= submit_tag("check answer",  :class => "btn btn-warning")  %>
- <% end %>
-
-  <!-- quiz logic is in partial for temp time -->
-  </div>
-  <div class="col-sm-2"></div>
+   <div class="col-sm-2"></div>
+   <div class="col-sm-8">
+     <h4>Ok! Now Guess...</h4>
+     <div style="padding-top:10px;">
+      <div class="pull-right">
+       <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-default"%>
+      </div>
+      <div>
+       <%= form_tag(result_path, method: "get", ) do %>
+         <%= label_tag(:guess, "Last Name") %>
+         <%= text_field_tag :guess %>
+         <%= hidden_field_tag(:right_answer, index_for_id) %>
+         <%= submit_tag("check answer",  :class => "btn btn-warning")  %>
+       <% end %>
+       </div>
+       </div>
+     </div>
+    <div class="col-sm-2"></div>
 </div>
+
+
 
 
 

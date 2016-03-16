@@ -28,15 +28,25 @@
   <div class="col-sm-8">
   <% if session[:quiz_list].empty? %>
     <% session[:quiz_list] = Logician.ids.shuffle %>
-    <div> THANKS FOR PLAYING </div>
-     <%= link_to fa_icon("question-circle", text:"play again"), quiz_path, class:"btn btn-warning"%>
+
+    <h4>Woot! Woot! You finished the Quiz!!!</h4>
+    <div style="padding-top:10px;">
+       <div class="pull-right">
+          <%= link_to fa_icon("film", text:"roll credits"), thanks_path, class:"btn btn-default"%>
+       </div>
+
+       <%= link_to fa_icon("repeat", text:"play again"), quiz_path, class:"btn btn-warning"%>
+     </div>
     <% else %>
-    <div>
-      <div class="pull-right">
-        <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-warning"%>
-      </div>
-       <%= link_to fa_icon("question-circle", text:"next question"), quiz_path, class:"btn btn-warning"%>
+
+    <div style="padding-top:10px;">
+       <div class="pull-right">
+         <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-default"%>
+        </div>
+
+        <%= link_to fa_icon("question-circle", text:"next question"), quiz_path, class:"btn btn-warning"%>
     </div>
+
   </div>
   <% end %>
   <div class="col-sm-2"></div>
