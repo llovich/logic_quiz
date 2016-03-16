@@ -1,5 +1,0 @@
-<% if params[:guess].titleize.eql?  @logicians.last.last_name %>
-    <%= "You are correct. It is #{@logicians.last.first_name} #{@logicians.last.last_name}!" %>
-  <% else %>
-    <%= "Good guess, but, it's #{@logicians.last.first_name} #{@logicians.last.last_name}." %>
-<% end %>
