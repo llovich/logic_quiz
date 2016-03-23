@@ -1,6 +1,11 @@
 <div class="row">
    <div class="col-sm-2"></div>
    <div class="col-sm-8">
+   <!-- for bug on reloading of quiz page -->
+   <!-- if session is empty/all entries shown, start quiz over -->
+    <% if session[:quiz_list].empty? %>
+      <% session[:quiz_list] = Logician.ids.shuffle %>
+    <% end %>
      <% index_for_id = session[:quiz_list].pop %>
       <h1>Who Am I?</h1>
        <div class="panel panel-default">
@@ -19,17 +24,18 @@
    <div class="col-sm-8">
      <h4>Ok! Now Guess...</h4>
      <div style="padding-top:10px;">
-      <div class="pull-right">
-       <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-default"%>
-      </div>
-      <div>
-       <%= form_tag(result_path, method: "get", ) do %>
+       <div class="pull-right">
+        <%= form_tag(result_path, method: "get", ) do %>
          <%= label_tag(:guess, "Last Name") %>
          <%= text_field_tag :guess %>
          <%= hidden_field_tag(:right_answer, index_for_id) %>
-         <%= submit_tag("check answer",  :class => "btn btn-warning")  %>
-       <% end %>
-       </div>
+         <%= submit_tag("check it",  :class => "btn btn-info")  %>
+        <% end %>
+        </div>
+        <div class="clearfix"></div>
+        <div class="pull-right" style="padding-top:10px;">
+        <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-default"%>
+        </div>
        </div>
      </div>
     <div class="col-sm-2"></div>

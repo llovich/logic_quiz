@@ -1,10 +1,14 @@
 <div class="row">
   <div class="col-sm-2"></div>
   <div class="col-sm-8">
+   <% if params[:guess].nil? %>
+      <% params[:guess] = 'hello' %>
+      <% params[:right_answer] = 1 %>
+    <% end %>
    <% index_for_id = params[:right_answer] %>
     <% if params[:guess].titleize.eql? @logicians.find(index_for_id).last_name %>
       <h1>Nicely done!</h1>
-      <div><h4><%= "You are correct. It is #{@logicians.find(index_for_id).first_name} #{@logicians.find(index_for_id).last_name}!" %></h4></div>
+      <div><h4><%= "You're correct. It is #{@logicians.find(index_for_id).first_name} #{@logicians.find(index_for_id).last_name}!" %></h4></div>
     <% else %>
       <h1>Almost, but not quite!</h1>
       <h4><%="Good guess, but, it's #{@logicians.find(index_for_id).first_name} #{@logicians.find(index_for_id).last_name}." %></h4>
@@ -29,22 +33,26 @@
   <% if session[:quiz_list].empty? %>
     <% session[:quiz_list] = Logician.ids.shuffle %>
 
-    <h4>Woot! Woot! You finished the Quiz!!!</h4>
+    <h4>Woot! You finished the Quiz!!!</h4>
     <div style="padding-top:10px;">
-       <div class="pull-right">
-          <%= link_to fa_icon("film", text:"roll credits"), thanks_path, class:"btn btn-default"%>
+      <div class="pull-right">
+        <%= link_to fa_icon("repeat", text:"play again"), quiz_path, class:"btn btn-info"%>
+      </div>
+      <div class="clearfix"></div>
+      <div class="pull-right" style="padding-top:10px;">
+        <%= link_to fa_icon("film", text:"roll credits"), thanks_path, class:"btn btn-default"%>
        </div>
-
-       <%= link_to fa_icon("repeat", text:"play again"), quiz_path, class:"btn btn-warning"%>
      </div>
     <% else %>
 
     <div style="padding-top:10px;">
        <div class="pull-right">
+        <%= link_to fa_icon("question-circle", text:"next question"), quiz_path, class:"btn btn-info"%>
+       </div>
+       <div class="clearfix"></div>
+       <div class="pull-right" style="padding-top:10px;">
          <%= link_to fa_icon("sign-out", text:"exit quiz"), thanks_path, class:"btn btn-default"%>
         </div>
-
-        <%= link_to fa_icon("question-circle", text:"next question"), quiz_path, class:"btn btn-warning"%>
     </div>
 
   </div>

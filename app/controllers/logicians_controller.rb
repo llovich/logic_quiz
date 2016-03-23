@@ -1,5 +1,6 @@
 class LogiciansController < ApplicationController
   before_action :set_logician, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   # GET /logicians
   # GET /logicians.json

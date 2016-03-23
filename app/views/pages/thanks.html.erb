@@ -1,15 +1,33 @@
 <div class="row">
-<div class="col-sm-2"></div>
-<div class="col-sm-8">
-<h1>Thanks for Playing</h1>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1>Thanks for Playing</h1>
 
-<h4>Heading 4</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h4>Heading 4</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+  <div class="col-sm-2"></div>
 </div>
-<div class="col-sm-2"></div>
+
+<div class="row">
+   <div class="col-sm-2"></div>
+   <div class="col-sm-8">
+     <div style="padding-top:10px;">
+        <div class="pull-right" style="padding-top:10px;">
+         <% if session[:quiz_list].empty? %>
+          <% session[:quiz_list] = Logician.ids.shuffle %>
+        <% end %>
+
+        <%= link_to fa_icon("repeat", text:"play again"), quiz_path, class:"btn btn-info"%>
+        </div>
+       </div>
+     </div>
+    <div class="col-sm-2"></div>
 </div>
+

@@ -7,11 +7,12 @@ $text_font: 'Arvo', serif;
 $bkgd_color: WhiteSmoke;
 $app_bkgdcolor: #FFFFFF;
 
-
+/* need smaller body top margin and headline size for phone and tablet size */
 
 body {
-  margin-top:10px;
-  padding-top:10px;
+  margin-top:50px;
+  margin-bottom:60px;
+  /*padding-top:10px;*/
   font-family: $text_font;
   background-color:$bkgd_color;
 }
@@ -20,10 +21,12 @@ body {
   background-color: $app_bkgdcolor;
   padding-top:10px;
   padding-bottom:30px;
-  #margin-left:50px;
-  #margin-right:50px;
-  margin-bottom:100px;
-  margin-top:20px;
+  padding-left:2px;
+  padding-right:2px;
+  /*margin-left:50px;
+  margin-right:50px; */
+  margin-bottom:20px;
+  margin-right:5px;
   border-radius: 20px;
 }
 
@@ -54,3 +57,11 @@ p {
 .form-inputs {
     font-family: $text_font;
 }
+
+.new_admin {
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+

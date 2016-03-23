@@ -3,18 +3,23 @@
 <div class="col-sm-8">
   <h1>Welcome</h1>
   <div class="panel panel-default">
-        <div class="panel-body">
+      <div class="panel-body">
         <%= image_tag "vennimage.png", class:"img-responsive center-block img-rounded" %>
-        </div>
       </div>
+  </div>
   <h4>Heading 4</h4>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-  <div class="text-right">
-    <%= link_to fa_icon("arrow-circle-right", text:"start quiz"), quiz_path, class:"btn btn-warning" %>
+  quis nostrud exercitation ullamco laboris nisi ut aliquip. [READ MORE LINK]</p>
+
+  <div style="padding-top:10px;">
+      <div class="pull-right">
+        <%= link_to fa_icon("arrow-circle-right", text:"start quiz"), quiz_path, class:"btn btn-info" %>
+      </div>
   </div>
-</div>
+
+</div> <!-- ends col-sm-8 -->
+
 <div class="col-sm-2"></div>
 </div>
 
