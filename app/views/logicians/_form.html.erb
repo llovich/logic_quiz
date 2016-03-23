@@ -1,15 +1,13 @@
 <div class="row">
 <div class="col-sm-2"></div>
 <div class="col-sm-8 well">
-
+  <div style="margin-bottom:10px;"><small><mark>All fields used. Pls fill out everything.</mark></small></div>
 <%= simple_form_for(@logician) do |f| %>
  <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :hint1 %>
-    <%= f.input :hint2 %>
-    <%= f.input :hint3 %>
+    <%= f.input :hint, as: :text, label: "Hint" %>
     <%= f.input :drawing, as: :file, label: "Upload a New Drawing" %>
     <% if @logician.drawing.exists? %>
       <%= label_tag "Current Drawing" %>

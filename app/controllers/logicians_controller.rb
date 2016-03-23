@@ -70,6 +70,6 @@ class LogiciansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def logician_params
-      params.require(:logician).permit(:first_name, :last_name, :hint1, :hint2, :hint3, :difficulty_level, :bio, :drawing, :photo)
+      params.require(:logician).permit(:first_name, :last_name, :hint1, :hint2, :hint3, :hint, :difficulty_level, :bio, :drawing, :photo)
     end
 end
