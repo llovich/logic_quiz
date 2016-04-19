@@ -39,6 +39,14 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "paperclip", "~> 4.3"
 gem 'devise'
 gem 'simple_form'
+gem 'figaro'
+
+#added new group for production and added 2 gems
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'aws-sdk', '< 2'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
